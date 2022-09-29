@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1058328213586",
+    "firebase_url": "https://loginapp-f3872-default-rtdb.firebaseio.com",
+    "project_id": "loginapp-f3872",
+    "storage_bucket": "loginapp-f3872.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058328213586:android:6ee40543113117f295078b",
+        "android_client_info": {
+          "package_name": "com.example.acropolis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058328213586-dc5lep3fb2ahtao4n6n3t222uvvq8l8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEtbllNgEki19EeDXFaGSNst3jV6wNk0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058328213586-dc5lep3fb2ahtao4n6n3t222uvvq8l8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

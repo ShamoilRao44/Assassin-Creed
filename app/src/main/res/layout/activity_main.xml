@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:background="@drawable/assassins_creed_1">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/signincardview"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#2804D3ED">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#8684D8E3"
+            android:backgroundTint="#8684D8E3">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnsignin"
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"
+                    android:text="Sign in"
+                    android:textColor="#00D4BB"
+                    android:layout_weight="50"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSignup"
+                    android:layout_width="wrap_content"
+                    android:background="#0000BCD4"
+                    android:layout_height="match_parent"
+                    android:text="Sign up"
+                    android:textColor="#6B00BCD4"
+                    android:layout_weight="50"
+                    />
+                
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="50"
+                    android:background="#00D4BB"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/SigninEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="Email"
+                android:backgroundTint="#00BCD4"
+                android:textColorHint="#9700BCD4"
+                android:paddingLeft="8dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/SigninPassword"
+                android:paddingLeft="8dp"
+                android:hint="Password"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="#00BCD4"
+                android:textColorHint="#9700BCD4"
+                android:inputType="textPassword" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:text="validate"
+                android:id="@+id/btnvalidatefromsignin"
+                android:textColor="#00D4BB"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/signupcardview"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#0004D3ED">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#8684D8E3"
+            android:backgroundTint="#8684D8E3">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:weightSum="100">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnsigninfromsignup"
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"
+                    android:text="Sign in"
+                    android:textColor="#6B00BCD4"
+                    android:layout_weight="50"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_height="match_parent"
+                    android:text="Sign up"
+                    android:textColor="#00D4BB"
+                    android:layout_weight="50"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="50"
+                    android:background="@android:color/transparent"/>
+                <View
+
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="50"
+                    android:background="#00D4BB"/>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/SignUpUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Username"
+                android:backgroundTint="#00BCD4"
+                android:textColorHint="#9700BCD4"
+                android:paddingLeft="8dp"
+                android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/SignupEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:backgroundTint="#00BCD4"
+                android:textColorHint="#9700BCD4"
+
+                android:paddingLeft="8dp"
+                android:inputType="textEmailAddress" />
+            <EditText
+                android:paddingLeft="8dp"
+                android:hint="password"
+                android:layout_margin="10dp"
+                android:id="@+id/SignupPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="#00BCD4"
+                android:textColorHint="#9700BCD4"
+                android:inputType="textPassword" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:text="validate"
+                android:textColor="#00D4BB"
+                android:id="@+id/btnvalidatefromsignup"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
