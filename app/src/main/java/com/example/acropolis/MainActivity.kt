@@ -52,9 +52,14 @@ class MainActivity : AppCompatActivity() {
     private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task->
             if (task.isSuccessful){
-                val intent = Intent(this, HomeScreen::class.java)
-                startActivity(intent)
-                finish()
+                if (mAuth.currentUser!!.isEmailVerified){
+                    val intent = Intent(this, HomeScreen::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    Toast.makeText(this,"please verify your email",Toast.LENGTH_SHORT).show()
+                }
+
             }else{
                 Toast.makeText(this,"user doesn't exist",Toast.LENGTH_SHORT).show()
             }
@@ -64,9 +69,15 @@ class MainActivity : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    addUserToDatabase(email,username,mAuth.currentUser!!.uid)
-                    binding.signincardview.visibility=View.VISIBLE
-                    binding.signupcardview.visibility=View.GONE
+                    mAuth.currentUser!!.sendEmailVerification().addOnCompleteListener { task->
+                      if (task.isSuccessful){
+                          addUserToDatabase(email,username,mAuth.currentUser!!.uid)
+                          binding.signincardview.visibility=View.VISIBLE
+                          binding.signupcardview.visibility=View.GONE
+                          Toast.makeText(this, "Verification link sent to your Email", Toast.LENGTH_SHORT).show()
+                      }
+                    }
+
                 } else {
                     Toast.makeText(this, "else executed", Toast.LENGTH_SHORT).show()
                 }
@@ -75,17 +86,12 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun addUserToDatabase(email:String,name: String, uid: String) {
-        mDatabase = FirebaseDatabase.getInstance("https://loginapp-f3872-default-rtdb.firebaseio.com/").getReference()
+        mDatabase = FirebaseDatabase.getInstance().getReference()
         mDatabase.child("user").child(uid).setValue(dataofperson(email,name))
-        Log.e("error","addto dataalkjgldf")
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello, World!")
     }
 }
 
 data class dataofperson(
     val email: String,
-    val password: String
+    val name: String
 )
